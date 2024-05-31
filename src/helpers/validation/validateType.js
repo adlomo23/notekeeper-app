@@ -1,20 +1,16 @@
 /**
- * Define 'validateType' function.
  * 
- * If recived values in the array are not the esperated values, return false, else it will return true.
- * 
- * Esperated values: 
- *      0: string
- *      1: string
- *      2: boolean
- *      3: string
- *      4: string
+ * @param {any} value foo
+ * @param {string} type foo
+ * @returns {boolean} foo
  */
 
 const validateType = (value, type) => {
-    
+    if (typeof(value) === type){
+        return true;
+    }
+
+    return false;
 };
 
 export default validateType
-
-
