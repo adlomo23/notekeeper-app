@@ -7,6 +7,8 @@ import { Form } from "./components/CreateNoteForm";
 function App() {
   const [notes, setNotes] = useState([]);
 
+  const [state, setState] = useState(false);
+
   useEffect(() => {
     const fetchNotes = async () => {
       try {

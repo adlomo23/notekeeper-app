@@ -1,4 +1,4 @@
-const addNote = (newNote) => {
+const editNote = (newNote) => {
   return globalThis
     .fetch(`${import.meta.env.VITE_URL}/notes/${newNote.id}`, {
       method: "PUT",

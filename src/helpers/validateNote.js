@@ -23,8 +23,7 @@ const validateNote = (note) => {
     },
     {
       isValid:
-        validateNonEmpty(note.important) &&
-        validateType(note.important, "boolean"),
+        validateType(note.important, 'boolean'),
       message: "Important is not correct",
     },
     {

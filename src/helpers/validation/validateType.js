@@ -1,8 +1,8 @@
 /**
- * 
- * @param {any} value foo
- * @param {string} type foo
- * @returns {boolean} foo
+ * Compares whether the entered value is the expected value
+ * @param {any} value 
+ * @param {string} type 
+ * @returns {boolean} 
  */
 
 const validateType = (value, type) => {
