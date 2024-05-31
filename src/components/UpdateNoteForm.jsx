@@ -1,6 +1,7 @@
 import validateNote from "../helpers/validateNote.js";
+import editNote from "../services/editNote.js";
 
-export default function Form({ notes, setNotes, addNote }) {
+export default function Form({ notes, setNotes, addNote, note }) {
   function save(event) {
     event.preventDefault();
 
@@ -19,7 +20,7 @@ export default function Form({ notes, setNotes, addNote }) {
     };
 
     if (validateNote(newNote)) {
-      addNote(newNote).then((createdNote) => {
+      editNote(newNote).then((createdNote) => {
         setNotes([...notes, createdNote]);
       });
     } else {
@@ -32,19 +33,19 @@ export default function Form({ notes, setNotes, addNote }) {
   return (
     <form onSubmit={save}>
       <label htmlFor="name">Name: </label>
-      <input type="text" id="name" />
+      <input type="text" id="name" value={note.name} />
       <br />
       <br />
       <label htmlFor="description">Description: </label>
-      <input type="text" id="description" />
+      <input type="text" id="description" value={note.description} />
       <br />
       <br />
       <label htmlFor="important">Important: </label>
-      <input type="checkbox" id="important" />
+      <input type="checkbox" id="important" value={note.important} />
       <br />
       <br />
       <label htmlFor="status">Status: </label>
-      <select id="status">
+      <select id="status" value={note.status}>
         <option value="Pending">Pending</option>
         <option value="In Progress">In progress</option>
         <option value="Done">Done</option>
@@ -52,7 +53,7 @@ export default function Form({ notes, setNotes, addNote }) {
       <br />
       <br />
       <label htmlFor="date">Date: </label>
-      <input type="date" id="date" />
+      <input type="date" id="date" value={note.date} />
       <br />
       <br />
       <button type="submit">Enviar</button>
